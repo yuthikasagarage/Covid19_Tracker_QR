@@ -56,15 +56,39 @@
 		537B14252461C7CE00380333 /* Covid19_Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				537B143D2461C9E100380333 /* controller */,
+				537B143C2461C9D000380333 /* view */,
+				537B143A2461C9AB00380333 /* model */,
 				537B14262461C7CE00380333 /* AppDelegate.swift */,
 				537B14282461C7CE00380333 /* SceneDelegate.swift */,
-				537B142A2461C7CE00380333 /* ViewController.swift */,
-				537B142C2461C7CE00380333 /* Main.storyboard */,
 				537B142F2461C7D000380333 /* Assets.xcassets */,
-				537B14312461C7D000380333 /* LaunchScreen.storyboard */,
 				537B14342461C7D000380333 /* Info.plist */,
 			);
 			path = Covid19_Tracker;
+			sourceTree = "<group>";
+		};
+		537B143A2461C9AB00380333 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		537B143C2461C9D000380333 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				537B142C2461C7CE00380333 /* Main.storyboard */,
+				537B14312461C7D000380333 /* LaunchScreen.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		537B143D2461C9E100380333 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				537B142A2461C7CE00380333 /* ViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
