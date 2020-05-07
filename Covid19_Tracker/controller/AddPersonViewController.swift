@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
+//  AddPersonViewController.swift
 //  Covid19_Tracker
 //
-//  Created by Harshana Rathnamalala on 5/5/20.
+//  Created by Harshana Rathnamalala on 5/7/20.
 //  Copyright © 2020 Harshana Rathnamalala. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddPersonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+  
     }
-
+    
 
 }
-
