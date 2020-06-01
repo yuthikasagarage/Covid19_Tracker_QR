@@ -39,25 +39,7 @@ class SugnUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     //check the fields
-    func transition(){
-        
-        let mainViewController1 = "mainvc"
-
-        let homeView = storyboard?.instantiateViewController(withIdentifier: mainViewController1) as?
-        mainViewController
-        
-        
-       let nav = UINavigationController(rootViewController: homeView!)
-        
-        nav.navigationBar.barTintColor = UIColor.init(displayP3Red: 120.0/255.0, green:117.0/255.0 , blue: 173.0/255.0, alpha: 1.0)
-        
-        view.window?.rootViewController = nav
-        view.window?.makeKeyAndVisible()
-        
-//
-        
-        
-    }
+   
     
     func ValidateFields() -> String? {
         
@@ -118,7 +100,11 @@ class SugnUpViewController: UIViewController {
                         }
                 }
             
-                  self.transition()
+                
+                Switcher.updateRootVC()
+                let newViewObject = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController //LoginPageViewController is my login view file, and identifier also has the same name.
+                self.navigationController?.pushViewController(newViewObject, animated: true)
+
                 }
             
         }
