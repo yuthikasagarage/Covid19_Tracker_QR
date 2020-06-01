@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var usename: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -20,25 +20,25 @@ class LoginViewController: UIViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         
-       // self.navigationItem.rightBarButtonItem = calculateButton
+        // self.navigationItem.rightBarButtonItem = calculateButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-        func ValidateFields() -> String? {
+    func ValidateFields() -> String? {
         
         if  usename.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
             
-            {
+        {
             return "Please fill all the fields"
             
         }
@@ -52,16 +52,15 @@ class LoginViewController: UIViewController {
         
         return nil
     }
-
-  
+    
+    
     @IBAction func sign_tapped(_ sender: Any) {
         
+        
+        
+        
+        
     }
-    
-    
-    
-    
-    
     @IBAction func Login_tapped(_ sender: Any) {
         
         
@@ -78,26 +77,17 @@ class LoginViewController: UIViewController {
                 if Error != nil{
                     self.usename.text = "invalid username or"
                     self.password.text = "invalid password "
-                
-                }else{
                     
-                    let mainViewController1 = "mainvc"
-
-                    let homeView = self.storyboard?.instantiateViewController(withIdentifier: mainViewController1) as?
-                     mainViewController
-                     
-                     
-                    let nav = UINavigationController(rootViewController: homeView!)
-                     
-                     nav.navigationBar.barTintColor = UIColor.init(displayP3Red: 120.0/255.0, green:117.0/255.0 , blue: 173.0/255.0, alpha: 1.0)
-                     
-                    self.view.window?.rootViewController = nav
-                    self.view.window?.makeKeyAndVisible()
+                }else{
+                    variable.status = true
+                    Switcher.updateRootVC()
+                    let newViewObject = self.storyboard?.instantiateViewController(withIdentifier: "mainvc") as! mainViewController //LoginPageViewController is my login view file, and identifier also has the same name.
+                    self.navigationController?.pushViewController(newViewObject, animated: true)
                 }
-            }
             }
         }
     }
-    
+}
+
 
 

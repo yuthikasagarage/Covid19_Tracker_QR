@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,6 @@
                                         <state key="normal" title="Log In"/>
                                         <connections>
                                             <action selector="Login_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYK-g4-VVy"/>
-                                            <segue destination="EgS-HD-SWj" kind="show" identifier="Login_segue" destinationCreationSelector="Login_segue:" id="iUK-k5-nEW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-Le-vdD" userLabel="Sign Up">
@@ -52,13 +51,12 @@
                                         </state>
                                         <connections>
                                             <action selector="sign_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sk8-Wo-mPf"/>
-                                            <segue destination="zso-04-H1Q" kind="push" id="nv7-BH-Kw4"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Covid19 Tracker" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-tr-YJd">
-                                <rect key="frame" x="55" y="88" width="304" height="203"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid19 Tracker" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-tr-YJd">
+                                <rect key="frame" x="55" y="51" width="304" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="203" id="BSY-Pd-fTg"/>
                                 </constraints>
@@ -80,10 +78,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="v0K-Wk-czr"/>
                     <navigationItem key="navigationItem" id="7GV-Kj-h2s"/>
                     <connections>
                         <outlet property="password" destination="wFZ-se-l85" id="sL5-Nr-Nf7"/>
                         <outlet property="usename" destination="8ER-3J-Mj2" id="de3-eF-zFB"/>
+                        <segue destination="EgS-HD-SWj" kind="show" identifier="MainSegue" id="gxC-ar-y0J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Tj-so-pgl">
-                                <rect key="frame" x="16" y="188" width="382" height="374"/>
+                                <rect key="frame" x="16" y="144" width="382" height="418"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAq-wx-nw1">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
@@ -107,27 +107,27 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-ha-Z9l">
-                                        <rect key="frame" x="0.0" y="58" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="65" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PHI - identification number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-vQ-T0p">
-                                        <rect key="frame" x="0.0" y="115.5" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-5A-2G3">
-                                        <rect key="frame" x="0.0" y="173.5" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="195.5" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZZ-f2-7gV">
-                                        <rect key="frame" x="0.0" y="231" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="260.5" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-KF-A5q">
-                                        <rect key="frame" x="0.0" y="291" width="382" height="30"/>
+                                        <rect key="frame" x="0.0" y="327.5" width="382" height="30"/>
                                         <color key="backgroundColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
@@ -135,7 +135,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSm-TG-xmY">
-                                        <rect key="frame" x="0.0" y="353.5" width="382" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="397.5" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -167,14 +167,26 @@
             </objects>
             <point key="canvasLocation" x="1048" y="-543"/>
         </scene>
-        <!--Profile Menu View Controller-->
+        <!--Logout View Controller-->
         <scene sceneID="2te-MH-FAi">
             <objects>
-                <tableViewController id="2b5-Cz-oTG" customClass="ProfileMenuViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="logoutVC" id="2b5-Cz-oTG" customClass="LogoutViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7rV-qL-OKN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zbn-D2-azj">
+                            <rect key="frame" x="0.0" y="238.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Log out">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="logout_tapped:" destination="2b5-Cz-oTG" eventType="touchUpInside" id="Jro-6h-5v4"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection id="ga1-Gn-Hjz">
                                 <cells>
@@ -302,43 +314,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="viO-26-xmf">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="2tZ-6H-CUa">
-                                        <rect key="frame" x="0.0" y="256.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2tZ-6H-CUa" id="KHb-HT-9to">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUc-JP-5z2">
-                                                    <rect key="frame" x="16" y="42" width="398" height="2.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miz-Ow-SDn">
-                                                    <rect key="frame" x="16" y="0.5" width="382" height="43"/>
-                                                    <state key="normal" title="Log out" backgroundImage="purple_button">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="logout:" destination="2b5-Cz-oTG" eventType="touchUpInside" id="5wf-cD-dn8"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Miz-Ow-SDn" firstAttribute="leading" secondItem="KHb-HT-9to" secondAttribute="leading" constant="16" id="1re-YD-T25"/>
-                                                <constraint firstAttribute="trailing" secondItem="wUc-JP-5z2" secondAttribute="trailing" id="8gt-Qc-2hM"/>
-                                                <constraint firstItem="Miz-Ow-SDn" firstAttribute="centerY" secondItem="KHb-HT-9to" secondAttribute="centerY" id="FAr-bo-hIu"/>
-                                                <constraint firstAttribute="trailing" secondItem="Miz-Ow-SDn" secondAttribute="trailing" constant="16" id="LcP-Hq-Q1o"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="wUc-JP-5z2" secondAttribute="bottom" constant="-11.5" id="NDo-rB-HRf"/>
-                                                <constraint firstItem="wUc-JP-5z2" firstAttribute="top" secondItem="KHb-HT-9to" secondAttribute="topMargin" constant="31" id="jlG-Pr-Xvt"/>
-                                                <constraint firstAttribute="trailing" secondItem="Miz-Ow-SDn" secondAttribute="trailing" constant="16" id="tO4-NL-iod"/>
-                                                <constraint firstItem="wUc-JP-5z2" firstAttribute="leading" secondItem="Miz-Ow-SDn" secondAttribute="leading" id="tac-xG-egI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="2b5-Cz-oTG" id="Nr3-Xh-wqx"/>
@@ -395,7 +370,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVK-L6-hoJ">
                                         <rect key="frame" x="203" y="0.0" width="195" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="QR Scan" backgroundImage="purple_button"/>
+                                        <state key="normal" title="QR Scan" backgroundImage="purple_button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -441,7 +418,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYN-zD-TNP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.38598737119999998" green="0.3721810579" blue="0.61571639779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -458,50 +436,39 @@
                 <tabBarController storyboardIdentifier="mainvc" automaticallyAdjustsScrollViewInsets="NO" id="EgS-HD-SWj" customClass="mainViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Covid19 Tracker" id="P6S-Uh-PwX">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="person" catalog="system" id="Nua-29-KJH">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="2b5-Cz-oTG" kind="show" id="Cfe-Ue-18n"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ecm-ah-mWj">
+                            <button key="customView" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bxi-bB-niH">
+                                <rect key="frame" x="20" y="11" width="85" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="  Profile" image="person.crop.rectangle" catalog="system">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2b5-Cz-oTG" kind="show" id="BDi-6m-qiD"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="scf-IE-hP3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="v60-s9-mBx" kind="show" id="bvx-Bv-bBX"/>
+                                <segue destination="v60-s9-mBx" kind="show" identifier="addquarantineSegue" id="bvx-Bv-bBX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ve-38-yud">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.38598737119999998" green="0.3721810579" blue="0.61571639779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="VV7-qg-CcI" kind="relationship" relationship="viewControllers" id="F4J-N3-JES"/>
-                        <segue destination="47U-Hp-3G5" kind="relationship" relationship="viewControllers" id="sh2-eS-n2I"/>
+                        <segue destination="Q0y-Pa-xWm" kind="relationship" relationship="viewControllers" id="peV-zg-4cm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7J-Gm-3u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890" y="127"/>
-        </scene>
-        <!--Reports-->
-        <scene sceneID="Sfc-vp-zsi">
-            <objects>
-                <viewController id="47U-Hp-3G5" customClass="ReportsViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V0w-MV-N2a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Wt2-mU-w7H"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Reports" image="doc.plaintext" catalog="system" id="Zqt-kF-vFD">
-                        <color key="badgeColor" red="0.38598737119999998" green="0.3721810579" blue="0.61571639779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89X-Wz-zUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3445" y="137"/>
         </scene>
         <!--Patients-->
         <scene sceneID="2cH-Uw-mHL">
@@ -511,6 +478,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_vc" id="E7h-HJ-8ra">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -530,17 +498,35 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyi-gP-mVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2632" y="137"/>
+            <point key="canvasLocation" x="2707" y="137"/>
+        </scene>
+        <!--Reports-->
+        <scene sceneID="muo-WB-0T5">
+            <objects>
+                <viewController storyboardIdentifier="reportvc" id="Q0y-Pa-xWm" customClass="ReportsViewController" customModule="Covid19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vnt-Gq-XVT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="o4v-fL-nNG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reports" image="doc.fill" catalog="system" selectedImage="doc.fill" id="aZn-Ls-7sx">
+                        <color key="badgeColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kV-xs-7jQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3490" y="137"/>
         </scene>
     </scenes>
     <resources>
         <image name="calculate_background" width="375" height="812"/>
         <image name="doc" catalog="system" width="56" height="64"/>
-        <image name="doc.plaintext" catalog="system" width="56" height="64"/>
-        <image name="person" catalog="system" width="64" height="58"/>
+        <image name="doc.fill" catalog="system" width="56" height="64"/>
+        <image name="person.crop.rectangle" catalog="system" width="64" height="46"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="purple_button" width="130" height="43"/>
         <image name="white_button" width="165" height="45"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" red="0.38598737119999998" green="0.3721810579" blue="0.61571639779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

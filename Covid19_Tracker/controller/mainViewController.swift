@@ -12,10 +12,15 @@ class mainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+//        self.navigationItem.hidesBackButton = true
+        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        
+        
         // Do any additional setup after loading the view.
     }
     
+
+
 
     /*
     // MARK: - Navigation

@@ -16,9 +16,10 @@
 		537B142E2461C7CE00380333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B142C2461C7CE00380333 /* Main.storyboard */; };
 		537B14302461C7D000380333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537B142F2461C7D000380333 /* Assets.xcassets */; };
 		537B14332461C7D000380333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B14312461C7D000380333 /* LaunchScreen.storyboard */; };
+		5E2CB21024855A1600F9D15B /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CB20F24855A1600F9D15B /* Switcher.swift */; };
+		5E2CB2122485B9EC00F9D15B /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CB2112485B9EC00F9D15B /* LogoutViewController.swift */; };
 		5E58973024679D2400170468 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58972F24679D2400170468 /* mainViewController.swift */; };
 		5E5897342467B2A400170468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5897332467B2A400170468 /* GoogleService-Info.plist */; };
-		5EB867522466942F0010EEE1 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB867512466942F0010EEE1 /* ProfileMenuViewController.swift */; };
 		5EB867542466BCE40010EEE1 /* SugnUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB867532466BCE40010EEE1 /* SugnUpViewController.swift */; };
 		A793729EAF1529E1211B7E02 /* Pods_Covid19_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545800506CAF54743470AFBF /* Pods_Covid19_Tracker.framework */; };
 /* End PBXBuildFile section */
@@ -38,9 +39,10 @@
 		537B14322461C7D000380333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		537B14342461C7D000380333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		545800506CAF54743470AFBF /* Pods_Covid19_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid19_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2CB20F24855A1600F9D15B /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		5E2CB2112485B9EC00F9D15B /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		5E58972F24679D2400170468 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		5E5897332467B2A400170468 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5EB867512466942F0010EEE1 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		5EB867532466BCE40010EEE1 /* SugnUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugnUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +114,10 @@
 				533F334F2463CF3200ED0AF5 /* HomeViewController.swift */,
 				533F33512463D25F00ED0AF5 /* ReportsViewController.swift */,
 				533F33532464009300ED0AF5 /* AddPersonViewController.swift */,
-				5EB867512466942F0010EEE1 /* ProfileMenuViewController.swift */,
 				5EB867532466BCE40010EEE1 /* SugnUpViewController.swift */,
 				5E58972F24679D2400170468 /* mainViewController.swift */,
+				5E2CB20F24855A1600F9D15B /* Switcher.swift */,
+				5E2CB2112485B9EC00F9D15B /* LogoutViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -252,14 +255,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2CB21024855A1600F9D15B /* Switcher.swift in Sources */,
 				537B142B2461C7CE00380333 /* LoginViewController.swift in Sources */,
 				537B14272461C7CE00380333 /* AppDelegate.swift in Sources */,
 				5E58973024679D2400170468 /* mainViewController.swift in Sources */,
 				533F33522463D25F00ED0AF5 /* ReportsViewController.swift in Sources */,
 				537B14292461C7CE00380333 /* SceneDelegate.swift in Sources */,
-				5EB867522466942F0010EEE1 /* ProfileMenuViewController.swift in Sources */,
 				533F33502463CF3200ED0AF5 /* HomeViewController.swift in Sources */,
 				5EB867542466BCE40010EEE1 /* SugnUpViewController.swift in Sources */,
+				5E2CB2122485B9EC00F9D15B /* LogoutViewController.swift in Sources */,
 				533F33542464009300ED0AF5 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
