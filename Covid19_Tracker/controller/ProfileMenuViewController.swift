@@ -24,6 +24,7 @@ class ProfileMenuViewController: UITableViewController {
         view.window?.rootViewController = vc
         view.window?.makeKeyAndVisible()
         
+        
     }
     
     

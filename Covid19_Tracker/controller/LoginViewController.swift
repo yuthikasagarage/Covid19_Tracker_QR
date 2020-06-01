@@ -56,12 +56,12 @@ class LoginViewController: UIViewController {
   
     @IBAction func sign_tapped(_ sender: Any) {
         
-        
-      
-        
-        
-        
     }
+    
+    
+    
+    
+    
     @IBAction func Login_tapped(_ sender: Any) {
         
         
@@ -94,16 +94,9 @@ class LoginViewController: UIViewController {
                     self.view.window?.rootViewController = nav
                     self.view.window?.makeKeyAndVisible()
                 }
-                
             }
             }
-            
-            
-            
-            
         }
-        
-        
     }
     
 
