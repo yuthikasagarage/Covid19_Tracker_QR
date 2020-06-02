@@ -13,6 +13,7 @@ target 'Covid19_Tracker' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+  	pod 'SwipeCellKit'
 
 
 end

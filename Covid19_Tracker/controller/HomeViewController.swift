@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class HomeViewController: UITableViewController {
+class HomeViewController: SwipeTableViewController {
+    
+    var patientArray = ["aravinda", "harshana", "jana", "Uthika"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +32,30 @@ class HomeViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return patientArray.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.textLabel?.text = patientArray[indexPath.row]
+        
+        return cell
+    }
     
-
+    //MARK: - tableview delegate methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "inspection_identifier", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! InspectionViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.receivedData = patientArray[indexPath.row]
+        }
+    }
    
 
 }
