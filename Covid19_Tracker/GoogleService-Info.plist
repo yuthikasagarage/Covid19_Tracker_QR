@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>579665623237-dj0cmmn0ti4qmh72t12h9ffjg22j65m1.apps.googleusercontent.com</string>
+	<string>96300911364-pv4u52u5nla0l4gb5kjjr512lr44mnrq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.579665623237-dj0cmmn0ti4qmh72t12h9ffjg22j65m1</string>
+	<string>com.googleusercontent.apps.96300911364-pv4u52u5nla0l4gb5kjjr512lr44mnrq</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAVPsS_WAEUhP-NXfar4L3RbTec57l85ck</string>
+	<string>AIzaSyDj6mRbCwKIb97TtnZo0lwZX2--qjUGVPc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>579665623237</string>
+	<string>96300911364</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.iit.coursework2.Covid19-Tracker</string>
+	<string>covid-trackersl</string>
 	<key>PROJECT_ID</key>
-	<string>login-cov-sars</string>
+	<string>covidfirebasesl</string>
 	<key>STORAGE_BUCKET</key>
-	<string>login-cov-sars.appspot.com</string>
+	<string>covidfirebasesl.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:579665623237:ios:ec09512fb9feba155598ac</string>
+	<string>1:96300911364:ios:4d2b06d859616dbb03de51</string>
 	<key>DATABASE_URL</key>
-	<string>https://login-cov-sars.firebaseio.com</string>
+	<string>https://covidfirebasesl.firebaseio.com</string>
 </dict>
 </plist>
