@@ -13,9 +13,15 @@ protocol recieve :class{
     func passDataBack(data: String)
 }
 
+protocol recieve1 :class{
+    func passDataBack1(data: String)
+}
+
+
 class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
   
     var delegate: recieve!
+    var delegate1: recieve1!
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
     
@@ -66,6 +72,7 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             DispatchQueue.global(qos: .userInitiated).async{
                 self.avCaptureSession.startRunning()
             }
+            
             DispatchQueue.main.async {
                 self.avPreviewLayer.frame = self.view.bounds
                 self.view.bringSubviewToFront(self.greenbar)
@@ -100,6 +107,14 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func check_tapped(_ sender: Any) {
+        code = barcode.text!
+        self.delegate1?.passDataBack1(data: code)
+        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        
+        
+    }
     
     
     func failed() {

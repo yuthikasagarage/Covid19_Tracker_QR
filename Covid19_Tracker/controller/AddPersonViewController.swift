@@ -14,12 +14,10 @@ import CoreLocation
 
 class AddPersonViewController: UIViewController , CLLocationManagerDelegate, recieve{
     func passDataBack(data: String) {
-        print(data + "hooray")
         qrid.text = data
     }
     
 
-   var qrcode = ""
     
     @IBOutlet weak var qrid: UITextField!
     
