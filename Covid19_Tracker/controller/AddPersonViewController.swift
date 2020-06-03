@@ -8,12 +8,27 @@
 
 import UIKit
 import CoreLocation
-class AddPersonViewController: UIViewController , CLLocationManagerDelegate{
-   
+
+ 
+
+
+class AddPersonViewController: UIViewController , CLLocationManagerDelegate, recieve{
+    func passDataBack(data: String) {
+        print(data + "hooray")
+        qrid.text = data
+    }
+    
+
+   var qrcode = ""
+    
+    @IBOutlet weak var qrid: UITextField!
+    
+    
     let locationManager = CLLocationManager()
     @IBOutlet weak var lblocation: UITextField!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
@@ -49,7 +64,13 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate{
             
           lblocation.text = "latitude = \(locValue.latitude), longitude = \(locValue.longitude)"
       }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "qrsegue"{
+            let secondview = segue.destination as! CameraViewController
+            secondview.delegate = self
+        }
+        
+    }
 }
     
         

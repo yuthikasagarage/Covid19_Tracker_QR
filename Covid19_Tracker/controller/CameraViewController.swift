@@ -8,13 +8,20 @@
 
 import UIKit
 import AVFoundation
- 
-class CameraViewController: UIViewController {
-    
+
+protocol recieve :class{
+    func passDataBack(data: String)
+}
+
+class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+  
+    var delegate: recieve!
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
     
- 
+    @IBOutlet weak var greenbar: UIView!
+    @IBOutlet weak var barcode: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         avCaptureSession = AVCaptureSession()
@@ -53,11 +60,46 @@ class CameraViewController: UIViewController {
             
             self.avPreviewLayer = AVCaptureVideoPreviewLayer(session: self.avCaptureSession)
             self.avPreviewLayer.frame = self.view.layer.bounds
-            self.avPreviewLayer.videoGravity = .resizeAspectFill
+            self.avPreviewLayer.videoGravity = .resizeAspect
             self.view.layer.addSublayer(self.avPreviewLayer)
-            self.avCaptureSession.startRunning()
+         
+            DispatchQueue.global(qos: .userInitiated).async{
+                self.avCaptureSession.startRunning()
+            }
+            DispatchQueue.main.async {
+                self.avPreviewLayer.frame = self.view.bounds
+                self.view.bringSubviewToFront(self.greenbar)
+            }
         }
     }
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        avCaptureSession.stopRunning()
+        
+        if let metadataObject = metadataObjects.first {
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            barcode.text = found(code: stringValue)
+            
+                   }
+        
+        dismiss(animated: true)
+        
+    }
+    
+    func found(code: String)->String {
+       
+        return code
+    }
+    var code = ""
+    @IBAction func save_tapped(_ sender: Any) {
+       
+        code = barcode.text!
+        self.delegate?.passDataBack(data: code)
+        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     
     func failed() {
@@ -91,22 +133,4 @@ class CameraViewController: UIViewController {
         return .portrait
     }
     
-}
-extension CameraViewController : AVCaptureMetadataOutputObjectsDelegate {
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        avCaptureSession.stopRunning()
-        
-        if let metadataObject = metadataObjects.first {
-            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-            guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
-        }
-        
-        dismiss(animated: true)
-    }
-    
-    func found(code: String) {
-        print(code)
-    }
 }

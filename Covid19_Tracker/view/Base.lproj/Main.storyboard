@@ -25,11 +25,13 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="papa@gmail.com" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-3J-Mj2">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aravinda1!" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-se-l85">
                                         <rect key="frame" x="0.0" y="59" width="382" height="51"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
@@ -62,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="203" id="BSY-Pd-fTg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -390,7 +392,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="SXV-Kz-K08" kind="show" id="uZb-au-Vmy"/>
+                                            <segue destination="SXV-Kz-K08" kind="show" identifier="qrsegue" id="uZb-au-Vmy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -411,6 +413,7 @@
                     <navigationItem key="navigationItem" title="Add Qurantine Person" id="djK-Mj-BXw"/>
                     <connections>
                         <outlet property="lblocation" destination="q68-lt-Mtw" id="yKw-06-Mhu"/>
+                        <outlet property="qrid" destination="dEF-hd-MRE" id="UH9-dl-4d5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qK-HT-aWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -425,18 +428,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Iu-xS-Ih2">
-                                <rect key="frame" x="0.0" y="646" width="414" height="74"/>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Iu-xS-Ih2">
+                                <rect key="frame" x="0.0" y="645" width="414" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-nd-yED">
-                                        <rect key="frame" x="30" y="15.5" width="130" height="43"/>
+                                        <rect key="frame" x="30" y="16" width="130" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Save" backgroundImage="purple_button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="save_tapped:" destination="SXV-Kz-K08" eventType="touchUpInside" id="gRS-jc-hM2"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpA-Ua-h8F">
-                                        <rect key="frame" x="180" y="20" width="194" height="34"/>
+                                        <rect key="frame" x="180" y="20.5" width="194" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="194" id="sVe-i5-wXg"/>
                                         </constraints>
@@ -445,26 +451,31 @@
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="greenbarview"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="7k4-q1-ifR"/>
                                     <constraint firstItem="kpA-Ua-h8F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hKb-nd-yED" secondAttribute="trailing" constant="8" symbolic="YES" id="Sjl-3n-oDh"/>
                                     <constraint firstItem="kpA-Ua-h8F" firstAttribute="leading" secondItem="hKb-nd-yED" secondAttribute="trailing" constant="20" id="b1Q-Bb-27q"/>
                                     <constraint firstItem="kpA-Ua-h8F" firstAttribute="centerY" secondItem="hKb-nd-yED" secondAttribute="centerY" id="jlt-Jx-90O"/>
                                     <constraint firstAttribute="trailing" secondItem="kpA-Ua-h8F" secondAttribute="trailing" constant="40" id="qP7-4V-4mv"/>
                                     <constraint firstItem="kpA-Ua-h8F" firstAttribute="centerY" secondItem="6Iu-xS-Ih2" secondAttribute="centerY" id="r5g-yu-BBq"/>
+                                    <constraint firstAttribute="width" constant="414" id="rIb-Ds-RbX"/>
                                     <constraint firstItem="hKb-nd-yED" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Iu-xS-Ih2" secondAttribute="leading" constant="20" symbolic="YES" id="zxr-CT-Kdq"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Iu-xS-Ih2" firstAttribute="leading" secondItem="WXm-Gl-Ojm" secondAttribute="leading" id="AdA-Sd-D1L"/>
-                            <constraint firstItem="6Iu-xS-Ih2" firstAttribute="centerX" secondItem="Y6h-ri-t6g" secondAttribute="centerX" id="B3L-EY-O54"/>
-                            <constraint firstItem="6Iu-xS-Ih2" firstAttribute="top" secondItem="WXm-Gl-Ojm" secondAttribute="top" constant="558" id="KTB-gd-aER"/>
-                            <constraint firstItem="WXm-Gl-Ojm" firstAttribute="bottom" secondItem="6Iu-xS-Ih2" secondAttribute="bottom" constant="142" id="xz6-PR-1rO"/>
+                            <constraint firstItem="6Iu-xS-Ih2" firstAttribute="centerX" secondItem="Y6h-ri-t6g" secondAttribute="centerX" id="MoB-Xf-nIx"/>
+                            <constraint firstItem="WXm-Gl-Ojm" firstAttribute="bottom" secondItem="6Iu-xS-Ih2" secondAttribute="bottom" constant="142" id="QaN-zp-xle"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WXm-Gl-Ojm"/>
                     </view>
                     <navigationItem key="navigationItem" id="1KO-C9-roP"/>
+                    <connections>
+                        <outlet property="barcode" destination="kpA-Ua-h8F" id="Inq-Zc-u3u"/>
+                        <outlet property="greenbar" destination="6Iu-xS-Ih2" id="QdF-CN-OZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqg-2o-vDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
