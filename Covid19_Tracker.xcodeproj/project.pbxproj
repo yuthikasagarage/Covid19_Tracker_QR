@@ -12,6 +12,8 @@
 		533F33542464009300ED0AF5 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F33532464009300ED0AF5 /* AddPersonViewController.swift */; };
 		535389712486D67F00629B30 /* SwipeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535389702486D67F00629B30 /* SwipeTableTableViewController.swift */; };
 		535389732486DE8100629B30 /* InspectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535389722486DE8100629B30 /* InspectionViewController.swift */; };
+		5353897924881F9900629B30 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5353897824881F9900629B30 /* Patient.swift */; };
+		5353897B2488216800629B30 /* Remark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5353897A2488216800629B30 /* Remark.swift */; };
 		537B14272461C7CE00380333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B14262461C7CE00380333 /* AppDelegate.swift */; };
 		537B14292461C7CE00380333 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B14282461C7CE00380333 /* SceneDelegate.swift */; };
 		537B142B2461C7CE00380333 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B142A2461C7CE00380333 /* LoginViewController.swift */; };
@@ -35,6 +37,8 @@
 		533F33532464009300ED0AF5 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		535389702486D67F00629B30 /* SwipeTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableTableViewController.swift; sourceTree = "<group>"; };
 		535389722486DE8100629B30 /* InspectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionViewController.swift; sourceTree = "<group>"; };
+		5353897824881F9900629B30 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		5353897A2488216800629B30 /* Remark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remark.swift; sourceTree = "<group>"; };
 		537B14232461C7CE00380333 /* Covid19_Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19_Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537B14262461C7CE00380333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		537B14282461C7CE00380333 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		537B143A2461C9AB00380333 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5353897824881F9900629B30 /* Patient.swift */,
+				5353897A2488216800629B30 /* Remark.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				533F33522463D25F00ED0AF5 /* ReportsViewController.swift in Sources */,
 				537B14292461C7CE00380333 /* SceneDelegate.swift in Sources */,
 				533F33502463CF3200ED0AF5 /* HomeViewController.swift in Sources */,
+				5353897B2488216800629B30 /* Remark.swift in Sources */,
 				5EB867542466BCE40010EEE1 /* SugnUpViewController.swift in Sources */,
+				5353897924881F9900629B30 /* Patient.swift in Sources */,
 				5E2CB2122485B9EC00F9D15B /* LogoutViewController.swift in Sources */,
 				533F33542464009300ED0AF5 /* AddPersonViewController.swift in Sources */,
 			);
