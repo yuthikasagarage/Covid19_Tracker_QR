@@ -24,7 +24,9 @@ class SugnUpViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     
+    @IBOutlet weak var phi: UITextField!
     
+    @IBOutlet weak var district: UITextField!
     
     @IBOutlet weak var password: UITextField!
     
@@ -78,6 +80,8 @@ class SugnUpViewController: UIViewController {
             let lastName_new = LastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email_new = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password_new = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let phi_new = phi.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let district_new = district.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             Auth.auth().createUser(withEmail: email_new, password: password_new) { (Result, Error) in
                
@@ -92,7 +96,7 @@ class SugnUpViewController: UIViewController {
                     print(firstName_new, lastName_new)
                 
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["first" : firstName_new, "last" : lastName_new, "uid" : Result!.user.uid]){(Error) in
+                    db.collection("users").addDocument(data: ["first" : firstName_new, "last" : lastName_new,"district" :district_new,"phi":phi_new, "uid" : Result!.user.uid]){(Error) in
                         
                         if Error != nil{
                             
