@@ -14,11 +14,12 @@ import CoreLocation
 
 
 class InspectionViewController: UIViewController , CLLocationManagerDelegate, recieve1{
+    
+    var selectedPatient: Patient?
+    
     func passDataBack1(data: String) {
         qridinspection.text = data
     }
-    
-    var receivedData = ""
    
     @IBOutlet weak var qridinspection: UITextField!
     

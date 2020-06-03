@@ -408,6 +408,9 @@
                                 <state key="normal" title="Add Patient">
                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPatient:" destination="v60-s9-mBx" eventType="touchUpInside" id="x7j-Nc-slg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -427,7 +430,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Qurantine Person" id="djK-Mj-BXw"/>
                     <connections>
+                        <outlet property="addressTextField" destination="Sr5-9q-sZb" id="eYd-I8-pEL"/>
                         <outlet property="lblocation" destination="q68-lt-Mtw" id="yKw-06-Mhu"/>
+                        <outlet property="nameTextField" destination="kec-eF-VmY" id="ojI-Sw-izE"/>
+                        <outlet property="nicTextField" destination="kSY-Kn-YzU" id="cVV-YQ-js4"/>
                         <outlet property="qrid" destination="dEF-hd-MRE" id="UH9-dl-4d5"/>
                     </connections>
                 </viewController>

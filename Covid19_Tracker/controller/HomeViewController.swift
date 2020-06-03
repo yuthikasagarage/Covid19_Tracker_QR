@@ -8,14 +8,17 @@
 
 import UIKit
 import SwipeCellKit
+import RealmSwift
 
 class HomeViewController: SwipeTableViewController {
     
-    var patientArray = ["aravinda", "harshana", "jana", "Uthika"]
+    var patientList: Results<Patient>?
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,13 +37,14 @@ class HomeViewController: SwipeTableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return patientArray.count
+        return patientList?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.textLabel?.text = patientArray[indexPath.row]
-        
+        if let patient = patientList?[indexPath.row] {
+            cell.textLabel?.text = patient.name
+        }
         return cell
     }
     
@@ -53,7 +57,15 @@ class HomeViewController: SwipeTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! InspectionViewController
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.receivedData = patientArray[indexPath.row]
+            destinationVC.selectedPatient = patientList?[indexPath.row]
+        }
+    }
+    
+//MARK: - load Patients
+    func loadData() {
+        patientList = realm.objects(Patient.self)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
    
