@@ -14,6 +14,8 @@ target 'Covid19_Tracker' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
   	pod 'SwipeCellKit'
+    pod 'Realm', :modular_headers => true
+    pod 'RealmSwift', :modular_headers => true
 
 
 end

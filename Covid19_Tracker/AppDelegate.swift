@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         Switcher.updateRootVC()
+        
+        do {
+            _ = try Realm()
+        } catch {
+            print("error occured in Realm: \(error)")
+        }
     
     return true
 }
