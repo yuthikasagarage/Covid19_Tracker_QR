@@ -123,7 +123,17 @@
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>Realm.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>25</integer>

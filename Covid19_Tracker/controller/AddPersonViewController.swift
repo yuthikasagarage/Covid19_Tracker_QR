@@ -49,10 +49,9 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
         if let nic = self.nicTextField.text {
             patient.nic = nic
         }
-//        if let qr = self.qrid.text {
-//            patient.qrId = qr
-//        }
-        patient.qrId = "6782730392"
+        if let qr = self.qrid.text {
+            patient.qrId = qr
+        }
         if let lan = latitude {
             patient.latitude = lan
         }
