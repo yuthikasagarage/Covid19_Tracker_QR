@@ -26,8 +26,10 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
     let locationManager = CLLocationManager()
     var qrId: String?
     var location: String?
+    var qrIdIns: String?
     func passDataBack1(data: String) {
         qrId = data
+        qridinspection.text = qrId
     }
    
     override func viewDidLoad() {
@@ -42,6 +44,7 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
     
     @IBAction func location_tapped1(_ sender: Any) {
         getCurrentLocation()
+        ilocation.text = location
     }
     
     func getCurrentLocation() {
@@ -75,7 +78,7 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
     }
     // need to unwrapping
     @IBAction func submitInspectionButton(_ sender: UIButton) {
-        if (qrId == qridinspection.text && location == ilocation.text) {
+        if (qrIdIns == qridinspection.text && location == ilocation.text) {
             if let patient = self.selectedPatient {
                 do {
                     try self.realm.write {
@@ -100,8 +103,9 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
         nameTextField.text = selectedPatient!.name
         addressTextField.text = selectedPatient!.address
         nicTextField.text = selectedPatient!.nic
-        qridinspection.text = selectedPatient!.qrId
+        qrIdIns = selectedPatient!.qrId
         location = "latitude = \(round(Double(selectedPatient!.latitude)!*1000)/1000), longitude = \(round(Double(selectedPatient!.longitide)!*1000)/1000)"
+        
     }
     
     //MARK: - Realm functions

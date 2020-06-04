@@ -17,10 +17,10 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nicTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
-    var latitude: String?
-    var longitude: String?
+    var latitude: Double?
+    var longitude: Double?
     let realm = try! Realm()
-    
+    var location: String?
     func passDataBack(data: String) {
         qrid.text = data
     }
@@ -53,10 +53,10 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
             patient.qrId = qr
         }
         if let lan = latitude {
-            patient.latitude = lan
+            patient.latitude = String(lan)
         }
         if let lon = longitude {
-            patient.longitide = lon
+            patient.longitide = String(lon)
         }
         patient.dateCreated = Date()
         self.saveData(patient: patient)
@@ -87,9 +87,12 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
             return
         }
-        lblocation.text = "latitude = \(locValue.latitude), longitude = \(locValue.longitude)"
-        latitude = String(locValue.latitude)
-        longitude = String(locValue.longitude)
+        latitude = locValue.latitude
+        longitude = locValue.longitude
+    
+        location = "latitude = \(round((latitude)!*1000)/1000), longitude = \(round((longitude)!*1000)/1000)"
+        lblocation.text = location
+      
       }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
