@@ -16,6 +16,7 @@ class Patient: Object {
     @objc dynamic var qrId: String = ""
     @objc dynamic var latitude: String = ""
     @objc dynamic var longitide: String = ""
+    @objc dynamic var dateCreated: Date?
     let remarks = List<Remark>()
 
 }

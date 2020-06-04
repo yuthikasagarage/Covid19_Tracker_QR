@@ -58,6 +58,7 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
         if let lon = longitude {
             patient.longitide = lon
         }
+        patient.dateCreated = Date()
         self.saveData(patient: patient)
         navigationController?.popViewController(animated: true)
     }
