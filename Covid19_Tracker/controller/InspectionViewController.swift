@@ -64,7 +64,7 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
               
           }
             
-          location = "latitude = \(locValue.latitude), longitude = \(locValue.longitude)"
+        ilocation.text = "latitude = \(Double(round(locValue.latitude*1000)/1000)), longitude = \(Double(round(locValue.longitude*1000)/1000))"
       }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue_check"{
@@ -101,7 +101,7 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
         addressTextField.text = selectedPatient!.address
         nicTextField.text = selectedPatient!.nic
         qridinspection.text = selectedPatient!.qrId
-        ilocation.text = "latitude = \(selectedPatient!.latitude), longitude = \(selectedPatient!.longitide)"
+        location = "latitude = \(round(Double(selectedPatient!.latitude)!*1000)/1000), longitude = \(round(Double(selectedPatient!.longitide)!*1000)/1000)"
     }
     
     //MARK: - Realm functions
