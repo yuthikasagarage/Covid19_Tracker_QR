@@ -60,6 +60,7 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
             patient.longitide = lon
         }
         self.saveData(patient: patient)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func location_tapped(_ sender: Any) {
@@ -111,6 +112,7 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
         }
     }
 }
+
     
         
   

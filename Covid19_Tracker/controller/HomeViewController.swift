@@ -26,6 +26,7 @@ class HomeViewController: SwipeTableViewController {
         self.tabBarController?.navigationItem.hidesBackButton = true
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 //        navigationController?.navigationBar.
+        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +45,7 @@ class HomeViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let patient = patientList?[indexPath.row] {
             cell.textLabel?.text = patient.name
+            cell.detailTextLabel?.text = patient.address
         }
         return cell
     }
@@ -66,6 +68,19 @@ class HomeViewController: SwipeTableViewController {
         patientList = realm.objects(Patient.self)
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+//MARK: - Delete person
+    override func deleteItem(at indexPath: IndexPath) {
+        if let person = self.patientList?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(person)
+                }
+            } catch {
+                print("error while deleting: \(error)")
+            }
         }
     }
    

@@ -24,8 +24,10 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
     let realm = try! Realm()
     var selectedPatient: Patient?
     let locationManager = CLLocationManager()
+    var qrId: String?
+    var location: String?
     func passDataBack1(data: String) {
-        qridinspection.text = data
+        qrId = data
     }
    
     override func viewDidLoad() {
@@ -62,7 +64,7 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
               
           }
             
-          ilocation.text = "latitude = \(locValue.latitude), longitude = \(locValue.longitude)"
+          location = "latitude = \(locValue.latitude), longitude = \(locValue.longitude)"
       }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue_check"{
@@ -73,28 +75,33 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
     }
     // need to unwrapping
     @IBAction func submitInspectionButton(_ sender: UIButton) {
-        if let patient = self.selectedPatient {
-            do {
-                try self.realm.write {
-                    let remark = Remark()
-                    remark.remark = remarksTextField!.text!
-                    remark.dateCreated = Date()
-                    patient.remarks.append(remark)
+        if (qrId == qridinspection.text && location == ilocation.text) {
+            if let patient = self.selectedPatient {
+                do {
+                    try self.realm.write {
+                        let remark = Remark()
+                        remark.remark = remarksTextField!.text!
+                        remark.dateCreated = Date()
+                        patient.remarks.append(remark)
+                        navigationController?.popViewController(animated: true)
+                    }
+                } catch {
+                    print("error: \(error)")
                 }
-            } catch {
-                print("error: \(error)")
             }
+        } else {
+            let alert = UIAlertController(title: "Alert!", message: "Incorrect QR and/or location. Please check the location and scan the QR code which sticked on the door", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     func loadDataOfPatient() {
-        
         nameTextField.text = selectedPatient!.name
         addressTextField.text = selectedPatient!.address
         nicTextField.text = selectedPatient!.nic
         qridinspection.text = selectedPatient!.qrId
         ilocation.text = "latitude = \(selectedPatient!.latitude), longitude = \(selectedPatient!.longitide)"
-        
     }
     
     //MARK: - Realm functions
