@@ -9,26 +9,33 @@
 
 import UIKit
 import CoreLocation
-
+import RealmSwift
  
 
 
 class InspectionViewController: UIViewController , CLLocationManagerDelegate, recieve1{
     
+    @IBOutlet weak var qridinspection: UITextField!
+    @IBOutlet weak var ilocation: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nicTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var remarksTextField: UITextField!
+    let realm = try! Realm()
     var selectedPatient: Patient?
-    
+    let locationManager = CLLocationManager()
     func passDataBack1(data: String) {
         qridinspection.text = data
     }
    
-    @IBOutlet weak var qridinspection: UITextField!
-    
-    @IBOutlet weak var ilocation: UITextField!
-    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        loadDataOfPatient()
+        if let count  = selectedPatient?.remarks.count {
+            print(count)
+        }
     }
     
     @IBAction func location_tapped1(_ sender: Any) {
@@ -64,6 +71,44 @@ class InspectionViewController: UIViewController , CLLocationManagerDelegate, re
         }
         
     }
+    // need to unwrapping
+    @IBAction func submitInspectionButton(_ sender: UIButton) {
+        if let patient = self.selectedPatient {
+            do {
+                try self.realm.write {
+                    let remark = Remark()
+                    remark.remark = remarksTextField!.text!
+                    remark.dateCreated = Date()
+                    patient.remarks.append(remark)
+                }
+            } catch {
+                print("error: \(error)")
+            }
+        }
+    }
+    
+    func loadDataOfPatient() {
+        
+        nameTextField.text = selectedPatient!.name
+        addressTextField.text = selectedPatient!.address
+        nicTextField.text = selectedPatient!.nic
+        qridinspection.text = selectedPatient!.qrId
+        ilocation.text = "latitude = \(selectedPatient!.latitude), longitude = \(selectedPatient!.longitide)"
+        
+    }
+    
+    //MARK: - Realm functions
+    func saveData(patient: Patient) {
+        do {
+            try realm.write{
+                realm.add(patient)
+                print("user added")
+            }
+        } catch {
+            print("Erro: \(error)")
+        }
+    }
+    
 }
     
         

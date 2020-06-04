@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Remark: Object {
-    @objc dynamic var title: String = ""
+    @objc dynamic var remark: String = ""
     @objc dynamic var dateCreated: Date?
     var parentPatient = LinkingObjects(fromType: Patient.self, property: "remarks")
 }

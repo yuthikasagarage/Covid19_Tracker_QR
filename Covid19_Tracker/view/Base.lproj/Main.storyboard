@@ -686,6 +686,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitInspectionButton:" destination="vDu-kr-eqa" eventType="touchUpInside" id="MER-ww-LIJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Remarks" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ycC-A8-wNb">
                                 <rect key="frame" x="16" y="468" width="382" height="138"/>
@@ -718,8 +721,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Inspection" id="SFW-7s-g8B"/>
                     <connections>
+                        <outlet property="addressTextField" destination="ZGY-mg-4dG" id="6ug-dX-aEN"/>
                         <outlet property="ilocation" destination="XaL-Wz-6tz" id="6wa-XD-bf8"/>
+                        <outlet property="nameTextField" destination="aMF-1l-bBS" id="dT4-Zm-R2l"/>
+                        <outlet property="nicTextField" destination="ZlM-FT-rAp" id="hYh-uV-ADT"/>
                         <outlet property="qridinspection" destination="oFx-8r-itf" id="zrh-w8-jwB"/>
+                        <outlet property="remarksTextField" destination="ycC-A8-wNb" id="jLK-yL-xmQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V94-Ow-jd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
