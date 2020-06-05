@@ -32,6 +32,7 @@ class LogoutViewController: UITableViewController {
         Switcher.updateRootVC()
         let newViewObject = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController //LoginPageViewController is my login view file, and identifier also has the same name.
         self.navigationController?.pushViewController(newViewObject, animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
 
     }
     private func getDocument() {
