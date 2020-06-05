@@ -670,16 +670,45 @@
                     <view key="view" contentMode="scaleToFill" id="Vnt-Gq-XVT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-EG-Li7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-v6-tPx" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="40" width="374" height="298"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjq-EH-OgS" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="395" width="374" height="298"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="z3b-g4-ccz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="NbX-Lf-d19"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="leading" secondItem="o4v-fL-nNG" secondAttribute="leading" id="88H-Di-d1t"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="trailing" secondItem="o4v-fL-nNG" secondAttribute="trailing" id="Pa0-5B-EFG"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="top" secondItem="o4v-fL-nNG" secondAttribute="top" id="UI7-n8-bT6"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="bottom" secondItem="o4v-fL-nNG" secondAttribute="bottom" id="wVh-Ro-MQi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o4v-fL-nNG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reports" image="doc.fill" catalog="system" selectedImage="doc.fill" id="aZn-Ls-7sx">
                         <color key="badgeColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="barChartView" destination="OaK-v6-tPx" id="ZxA-Ca-Ckr"/>
+                        <outlet property="pieChartView" destination="pjq-EH-OgS" id="q1b-zh-a0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kV-xs-7jQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="877"/>
+            <point key="canvasLocation" x="1882.608695652174" y="876.5625"/>
         </scene>
         <!--Inspection-->
         <scene sceneID="vhe-Za-Pok">
