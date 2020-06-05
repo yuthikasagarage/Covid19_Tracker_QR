@@ -56,6 +56,7 @@ class ReportsViewController: UIViewController {
     }
     
     func reloadData() {
+        reps = [Int]()
         if let list = patientList{
             getDates(list: list)
         }
