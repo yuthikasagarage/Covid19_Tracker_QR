@@ -16,6 +16,7 @@ target 'Covid19_Tracker' do
   	pod 'SwipeCellKit'
     pod 'Realm', :modular_headers => true
     pod 'RealmSwift', :modular_headers => true
+    pod 'Charts'
 
 
 end

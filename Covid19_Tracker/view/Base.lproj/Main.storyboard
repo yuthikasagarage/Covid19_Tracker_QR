@@ -20,48 +20,43 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6wT-gu-Jge">
-                                <rect key="frame" x="16" y="284" width="382" height="228"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="papa@gmail.com" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-3J-Mj2">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aravinda1!" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-se-l85">
-                                        <rect key="frame" x="0.0" y="59" width="382" height="51"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-dg-VNL">
-                                        <rect key="frame" x="0.0" y="118" width="382" height="51"/>
-                                        <color key="backgroundColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                        <state key="normal" title="Log In"/>
-                                        <connections>
-                                            <action selector="Login_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYK-g4-VVy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-Le-vdD" userLabel="Sign Up">
-                                        <rect key="frame" x="0.0" y="177" width="382" height="51"/>
-                                        <color key="backgroundColor" red="0.16711898348052318" green="0.5835323487525772" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleShadowColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sign_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sk8-Wo-mPf"/>
-                                            <segue destination="zso-04-H1Q" kind="show" id="p6U-Dh-7OA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="papa@gmail.com" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-3J-Mj2">
+                                <rect key="frame" x="16" y="627.5" width="382" height="35.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aravinda1!" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-se-l85">
+                                <rect key="frame" x="16" y="562" width="382" height="35.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-Le-vdD" userLabel="Sign Up">
+                                <rect key="frame" x="10" y="774" width="394" height="48"/>
+                                <color key="backgroundColor" red="0.16711898348052318" green="0.5835323487525772" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="sign_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sk8-Wo-mPf"/>
+                                    <segue destination="zso-04-H1Q" kind="show" id="p6U-Dh-7OA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-dg-VNL">
+                                <rect key="frame" x="10" y="703" width="394" height="51"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="Login_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYK-g4-VVy"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid19 Tracker" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-tr-YJd">
-                                <rect key="frame" x="55" y="51" width="304" height="203"/>
+                                <rect key="frame" x="55" y="128" width="308" height="195"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="203" id="BSY-Pd-fTg"/>
+                                    <constraint firstAttribute="height" constant="195" id="WSV-RG-MUg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,13 +66,21 @@
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6wT-gu-Jge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="37o-hF-Rb3"/>
-                            <constraint firstItem="6wT-gu-Jge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CLv-EP-M7Y"/>
-                            <constraint firstItem="6wT-gu-Jge" firstAttribute="top" secondItem="eUA-tr-YJd" secondAttribute="bottom" constant="30" id="TiV-Y0-RQG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6wT-gu-Jge" secondAttribute="trailing" constant="16" id="WSz-Dl-hvn"/>
-                            <constraint firstItem="eUA-tr-YJd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="kmd-BK-uQN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUA-tr-YJd" secondAttribute="trailing" constant="55" id="ofv-pq-1bw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6wT-gu-Jge" secondAttribute="bottom" constant="350" id="y0R-Hg-WSZ"/>
+                            <constraint firstItem="mtt-Le-vdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0Sd-g4-IkZ"/>
+                            <constraint firstItem="wFZ-se-l85" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5l9-G6-NIT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ER-3J-Mj2" secondAttribute="trailing" constant="16" id="BLb-hZ-sOU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mtt-Le-vdD" secondAttribute="bottom" constant="40" id="JEN-r0-WUm"/>
+                            <constraint firstItem="8ER-3J-Mj2" firstAttribute="top" secondItem="wFZ-se-l85" secondAttribute="bottom" constant="30" id="P4J-Ys-Vh8"/>
+                            <constraint firstItem="uqe-dg-VNL" firstAttribute="top" secondItem="8ER-3J-Mj2" secondAttribute="bottom" constant="40" id="Sk2-3w-rRs"/>
+                            <constraint firstItem="eUA-tr-YJd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="UeD-OG-vJT"/>
+                            <constraint firstItem="mtt-Le-vdD" firstAttribute="top" secondItem="uqe-dg-VNL" secondAttribute="bottom" constant="20" id="WOj-np-d4L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mtt-Le-vdD" secondAttribute="trailing" constant="10" id="bMK-S1-HOi"/>
+                            <constraint firstItem="uqe-dg-VNL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="c8W-Hg-44a"/>
+                            <constraint firstItem="8ER-3J-Mj2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="edC-zw-NGr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uqe-dg-VNL" secondAttribute="trailing" constant="10" id="gZe-4z-BLS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUA-tr-YJd" secondAttribute="trailing" constant="51" id="jPE-bz-zCc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wFZ-se-l85" secondAttribute="trailing" constant="16" id="lnP-G1-KIv"/>
+                            <constraint firstItem="eUA-tr-YJd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="oO7-JN-CsY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -670,16 +673,45 @@
                     <view key="view" contentMode="scaleToFill" id="Vnt-Gq-XVT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-EG-Li7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="713"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-v6-tPx" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="40" width="374" height="298"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjq-EH-OgS" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="395" width="374" height="298"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="z3b-g4-ccz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="NbX-Lf-d19"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="leading" secondItem="o4v-fL-nNG" secondAttribute="leading" id="88H-Di-d1t"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="trailing" secondItem="o4v-fL-nNG" secondAttribute="trailing" id="Pa0-5B-EFG"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="top" secondItem="o4v-fL-nNG" secondAttribute="top" id="UI7-n8-bT6"/>
+                            <constraint firstItem="bOr-EG-Li7" firstAttribute="bottom" secondItem="o4v-fL-nNG" secondAttribute="bottom" id="wVh-Ro-MQi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o4v-fL-nNG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reports" image="doc.fill" catalog="system" selectedImage="doc.fill" id="aZn-Ls-7sx">
                         <color key="badgeColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="barChartView" destination="OaK-v6-tPx" id="ZxA-Ca-Ckr"/>
+                        <outlet property="pieChartView" destination="pjq-EH-OgS" id="q1b-zh-a0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kV-xs-7jQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="844"/>
+            <point key="canvasLocation" x="1882.608695652174" y="876.5625"/>
         </scene>
         <!--Inspection-->
         <scene sceneID="vhe-Za-Pok">

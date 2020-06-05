@@ -17,6 +17,9 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nicTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var lblocation: UITextField!
+    @IBOutlet weak var qrid: UITextField!
+    
     var latitude: Double?
     var longitude: Double?
     let realm = try! Realm()
@@ -24,12 +27,7 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
     func passDataBack(data: String) {
         qrid.text = data
     }
-    
-    @IBOutlet weak var qrid: UITextField!
-    
-    
     let locationManager = CLLocationManager()
-    @IBOutlet weak var lblocation: UITextField!
     
     override func viewDidLoad() {
         
@@ -59,16 +57,22 @@ class AddPersonViewController: UIViewController , CLLocationManagerDelegate, rec
             patient.longitide = String(lon)
         }
         patient.dateCreated = Date()
-        self.saveData(patient: patient)
-        navigationController?.popViewController(animated: true)
+        if ((nameTextField.text) != "" && (addressTextField.text) != "" && (nicTextField.text) != ""
+            && (qrid.text) != "" && (location) != nil) {
+            self.saveData(patient: patient)
+            navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Alert!", message: "Empty field identified. Please make sure to fill all fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
+        }
+        
     }
     
     @IBAction func location_tapped(_ sender: Any) {
-        
          getCurrentLocation()
-        
     }
-    
     
     func getCurrentLocation() {
         // Ask for Authorisation from the User.
