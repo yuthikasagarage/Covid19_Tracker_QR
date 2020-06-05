@@ -800,6 +800,10 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="remarkEditBegins:" destination="vDu-kr-eqa" eventType="editingDidBegin" id="wP3-QR-33u"/>
+                                    <action selector="remarkEditEnd:" destination="vDu-kr-eqa" eventType="editingDidEnd" id="PUl-ic-xsQ"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
