@@ -46,12 +46,26 @@ class ReportsViewController: UIViewController {
         printData()
         setChart(dataPoints: dates, values: reps)
         customizeChart(dataPoints: dates, values: reps)
+        reloadData()
     }
     
     //MARK: - load Patients
     func loadData() {
         patientList = realm.objects(Patient.self)
         
+    }
+    
+    func reloadData() {
+        if let list = patientList{
+            getDates(list: list)
+        }
+        if dates.count > 0 {
+            getPatientsPerDayDictionary(dates: dates, list: patientList!)
+        }
+        repsPerDay()
+        printData()
+        setChart(dataPoints: dates, values: reps)
+        customizeChart(dataPoints: dates, values: reps)
     }
     
     //MARK: - Bar Charts
